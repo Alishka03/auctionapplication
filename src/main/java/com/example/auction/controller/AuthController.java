@@ -38,7 +38,7 @@ public class AuthController {
                             schema = @Schema(implementation = User.class)) })})
     public User register(@RequestBody @Valid @Parameter(description = "username and password") UserDto userDto, BindingResult bind) {
         if (bind.hasErrors()) {
-            throw new ApiRequestException("Oops email is not valid");
+            throw new ApiRequestException("Oops email is not valid!");
         } else {
             return registrationService.registerUser(userDto);
         }

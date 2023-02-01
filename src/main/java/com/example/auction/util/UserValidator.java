@@ -1,6 +1,6 @@
 package com.example.auction.util;
 
-import com.example.auction.UserDetailsService.JpaUserDetailsService;
+import com.example.auction.service.JpaUserDetailsService;
 import com.example.auction.model.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;

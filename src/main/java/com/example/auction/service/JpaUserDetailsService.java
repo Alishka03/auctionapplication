@@ -1,4 +1,4 @@
-package com.example.auction.UserDetailsService;
+package com.example.auction.service;
 
 import com.example.auction.model.SecurityUser;
 import com.example.auction.repository.UserRepository;
