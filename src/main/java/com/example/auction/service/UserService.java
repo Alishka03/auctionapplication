@@ -23,7 +23,7 @@ public class UserService {
     public User userByUsername(String username){
         return userRepository.findByUsername(username).get();
     }
-    public User getAuthenticatedUser( ) {
+    public User getAuthenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentUserName = authentication.getName();

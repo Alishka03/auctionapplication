@@ -19,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "User")
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +33,6 @@ public class User {
     @JsonManagedReference
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Post> postsList;
-
+    @OneToMany(mappedBy = "customer")
+    private List<Transaction> transactions;
 }

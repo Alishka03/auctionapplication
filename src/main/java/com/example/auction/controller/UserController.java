@@ -29,9 +29,17 @@ public class UserController {
     @Operation(description = "My Profile")
     public ResponseEntity<?> getMyProfile(Principal principal) {
         String username =principal.getName();
-        log.info("Logged in user : "+username);
+        log.trace("Logged in user : "+username);
         User user = userService.userByUsername(username);
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+    @GetMapping("/myposts")
+    @Operation(description = "Getting my posts")
+    public ResponseEntity<?> getMyPosts(Principal principal){
+        String username =principal.getName();
+
+        User user = userService.userByUsername(username);
+        return new ResponseEntity<>(user.getPostsList(),HttpStatus.OK);
     }
     public User getAuthenticatedUser(Principal principal){
         String username =principal.getName();

@@ -30,7 +30,6 @@ public class RegistrationService {
         user.setPassword(userDto.getPassword());
         user.setUsername(userDto.getUsername());
         user.setRoles("USER");
-
         return userRepository.save(user);
     }
 }
